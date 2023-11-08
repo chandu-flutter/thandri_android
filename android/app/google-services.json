@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "534725597570",
+    "project_id": "thandridb",
+    "storage_bucket": "thandridb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:534725597570:android:e6a30df2ef317fde7cd79b",
+        "android_client_info": {
+          "package_name": "com.example.thandri_sannidhi"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7VuF-J4EMRFjTWml8AcoeTLZCZYy01Yk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
