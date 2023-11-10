@@ -51,7 +51,7 @@ class _HomeScreenState extends State<HomeScreen> {
           },
           icon: const Icon(Icons.menu),
         ),
-        backgroundColor: const Color.fromARGB(255, 128, 0, 128),
+        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
         title: const Text('Thandri Sannidhi'),
         centerTitle: true,
         actions: [
@@ -309,7 +309,7 @@ class Linked extends StatelessWidget {
           Icon(
             icon,
             size: 40,
-            color: const Color.fromARGB(255, 128, 0, 128),
+            color: const Color.fromARGB(255, 54, 1, 63),
           ),
           Text(
             label2,

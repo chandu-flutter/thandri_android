@@ -10,7 +10,7 @@ class ShowDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 128, 0, 128),
+        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
         title: Text(songs[index].name),
         centerTitle: true,
       ),

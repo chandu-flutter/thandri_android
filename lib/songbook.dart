@@ -9,7 +9,7 @@ class SongBookScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 128, 0, 128),
+        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
         title: const Text('Song Book'),
         centerTitle: true,
       ),
@@ -36,7 +36,7 @@ class SongBookScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 return ListTile(
                   leading: CircleAvatar(
-                    backgroundColor: const Color.fromARGB(255, 128, 0, 128),
+                    backgroundColor: const Color.fromARGB(255, 54, 1, 63),
                     child: Text(
                       '${index + 1}',
                       style: const TextStyle(color: Colors.white),

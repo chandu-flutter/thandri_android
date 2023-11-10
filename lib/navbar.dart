@@ -17,7 +17,7 @@ class NavBar extends StatelessWidget {
     }
 
     return Drawer(
-      backgroundColor: const Color.fromARGB(255, 30, 36, 40),
+      backgroundColor: const Color.fromARGB(255, 54, 1, 63),
       elevation: 0,
       child: ListView(
         children: [

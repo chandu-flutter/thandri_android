@@ -25,7 +25,7 @@ class _NewScreenState extends State<NewScreen> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("New Here"),
-        backgroundColor: const Color.fromARGB(255, 128, 0, 128),
+        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
         centerTitle: true,
       ),
       body: Container(
@@ -44,7 +44,8 @@ class _NewScreenState extends State<NewScreen> {
                   onChanged: (valuename) {
                     textname = valuename;
                   },
-                  decoration: const InputDecoration(hintText: "Enter Your Name"),
+                  decoration:
+                      const InputDecoration(hintText: "Enter Your Name"),
                 ),
               ),
               Padding(
@@ -54,8 +55,8 @@ class _NewScreenState extends State<NewScreen> {
                   onChanged: (valueph) {
                     numberph = valueph;
                   },
-                  decoration:
-                      const InputDecoration(hintText: "Enter Your Phone Number"),
+                  decoration: const InputDecoration(
+                      hintText: "Enter Your Phone Number"),
                 ),
               ),
               Padding(
@@ -65,7 +66,8 @@ class _NewScreenState extends State<NewScreen> {
                   onChanged: (valuestate) {
                     textstate = valuestate;
                   },
-                  decoration: const InputDecoration(hintText: "Enter Your State"),
+                  decoration:
+                      const InputDecoration(hintText: "Enter Your State"),
                 ),
               ),
               Padding(
@@ -75,7 +77,8 @@ class _NewScreenState extends State<NewScreen> {
                   onChanged: (valuecountry) {
                     textcountry = valuecountry;
                   },
-                  decoration: const InputDecoration(hintText: "Enter Your Country"),
+                  decoration:
+                      const InputDecoration(hintText: "Enter Your Country"),
                 ),
               ),
               Padding(

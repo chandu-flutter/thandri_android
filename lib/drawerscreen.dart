@@ -9,7 +9,7 @@ class DrawerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ZoomDrawer(
-      menuBackgroundColor: const Color.fromARGB(255, 30, 36, 40),
+      menuBackgroundColor: const Color.fromARGB(255, 54, 1, 63),
       menuScreen: const NavBar(),
       mainScreen: const HomeScreen(),
       angle: -10,
