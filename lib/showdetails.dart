@@ -16,13 +16,15 @@ class ShowDetails extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Column(
-          children: <Widget>[
-            Text(
-              songs[index].details,
-              style: const TextStyle(fontSize: 18),
-            ),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Text(
+                songs[index].details,
+                style: const TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
         ),
       ),
     );
