@@ -19,9 +19,12 @@ class ShowDetails extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Text(
-                songs[index].details,
-                style: const TextStyle(fontSize: 18),
+              InteractiveViewer(
+                boundaryMargin: EdgeInsets.all(double.infinity),
+                child: Text(
+                  songs[index].details,
+                  style: const TextStyle(fontSize: 18),
+                ),
               ),
             ],
           ),
