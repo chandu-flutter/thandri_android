@@ -3,7 +3,7 @@ import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
 class RadioScreen extends StatelessWidget {
   final String radio =
-      'https://stream-152.zeno.fm/s0r8lmrgqt7uv?zs=_CpjUTzqRtCQqFv8tVZ00A';
+      'https://music.youtube.com/channel/UC29LOrmvszsTUM2n7fYC-Aw';
 
   const RadioScreen({super.key});
 

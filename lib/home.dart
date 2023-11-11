@@ -199,8 +199,8 @@ class _HomeScreenState extends State<HomeScreen> {
                   },
                   child: Linked(
                     icon: Icons.radio,
-                    label1: "",
-                    label2: "Radio",
+                    label1: "Radio",
+                    label2: "Songs",
                   ),
                 ),
               ],
