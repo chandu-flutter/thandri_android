@@ -44,6 +44,23 @@ class _UpdatesState extends State<Updates> {
                 child: Image(
                   image: NetworkImage(imageUrl, scale: 1.0),
                   fit: BoxFit.cover,
+                  frameBuilder:
+                      (context, child, frame, wasSynchronouslyLoaded) {
+                    return child;
+                  },
+                  loadingBuilder: (context, child, loadingProgress) {
+                    if (loadingProgress == null) {
+                      return child;
+                    } else {
+                      return Center(
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation(
+                            Color.fromARGB(255, 54, 1, 63),
+                          ),
+                        ),
+                      );
+                    }
+                  },
                 ),
               ),
             ),

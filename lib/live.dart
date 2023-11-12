@@ -1,26 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 
-class RadioScreen extends StatefulWidget {
-  const RadioScreen({super.key});
+class YoutubeLive extends StatefulWidget {
+  YoutubeLive({super.key});
 
   @override
-  State<RadioScreen> createState() => _RadioScreenState();
+  State<YoutubeLive> createState() => _YoutubeLiveState();
 }
 
-class _RadioScreenState extends State<RadioScreen> {
-  final String radio =
-      'https://music.youtube.com/channel/UC29LOrmvszsTUM2n7fYC-Aw';
+class _YoutubeLiveState extends State<YoutubeLive> {
+  final String youtubelive =
+      'https://www.youtube.com/playlist?list=PLDb1p7boCQFEwNpMHaiBP_Sxak1jJUtpS';
+
   var isLoading = false;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
-        title: const Text('Radio'),
-        centerTitle: true,
-      ),
       body: SafeArea(
         child: Stack(
           children: [
@@ -35,7 +31,7 @@ class _RadioScreenState extends State<RadioScreen> {
                   isLoading = false;
                 });
               },
-              initialUrlRequest: URLRequest(url: Uri.parse(radio)),
+              initialUrlRequest: URLRequest(url: Uri.parse(youtubelive)),
             ),
             Visibility(
               visible: isLoading,

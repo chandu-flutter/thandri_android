@@ -13,7 +13,7 @@ import 'prayer_victories.dart';
 
 import 'radio.dart';
 
-import 'youtube_live.dart';
+import 'live.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -82,6 +82,23 @@ class _HomeScreenState extends State<HomeScreen> {
                     elevation: 14,
                     child: Image(
                       image: NetworkImage(imageUrl, scale: 1.0),
+                      loadingBuilder: (context, child, loadingProgress) {
+                        if (loadingProgress == null) {
+                          return child;
+                        } else {
+                          return Container(
+                            height: 200,
+                            width: 340,
+                            child: Center(
+                              child: CircularProgressIndicator(
+                                valueColor: AlwaysStoppedAnimation(
+                                  Color.fromARGB(255, 54, 1, 63),
+                                ),
+                              ),
+                            ),
+                          );
+                        }
+                      },
                       height: 200,
                       width: 340,
                     ),
@@ -164,21 +181,21 @@ class _HomeScreenState extends State<HomeScreen> {
                     );
                   },
                   child: Linked(
-                    icon: Icons.notifications_active,
-                    label1: "",
-                    label2: "Notifications",
+                    icon: Icons.accessibility_new,
+                    label1: "Submit",
+                    label2: "Testimony",
                   ),
                 ),
                 InkWell(
                   onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const YoutubeLive();
-                        },
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) {
+                    //       return YoutubeLive();
+                    //     },
+                    //   ),
+                    // );
                   },
                   child: Linked(
                     icon: Icons.live_tv,
