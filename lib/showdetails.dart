@@ -27,31 +27,9 @@ class _ShowDetailsState extends State<ShowDetails> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              GestureDetector(
-                onScaleStart: (details) {
-                  _previousScale = _scale;
-                },
-                onScaleUpdate: (details) {
-                  setState(() {
-                    _scale = _previousScale * details.scale;
-                  });
-                },
-                onDoubleTap: () {
-                  setState(() {
-                    _scale = _scale == 1.0 ? 2.0 : 1.0;
-                  });
-                },
-                child: Transform.scale(
-                  scale: _scale,
-                  child: Container(
-                    width: MediaQuery.of(context).size.width,
-                    height: MediaQuery.of(context).size.height,
-                    child: Text(
-                      songs[widget.index].details,
-                      style: const TextStyle(fontSize: 18),
-                    ),
-                  ),
-                ),
+              Text(
+                songs[widget.index].details,
+                style: const TextStyle(fontSize: 18),
               ),
             ],
           ),
