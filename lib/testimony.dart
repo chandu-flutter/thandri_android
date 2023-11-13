@@ -4,29 +4,26 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 import 'package:thandri_sannidhi/success.dart';
+import 'package:thandri_sannidhi/testimonyReceived.dart';
 
-class NewScreen extends StatefulWidget {
-  const NewScreen({super.key});
+class TestimonyScreen extends StatefulWidget {
+  const TestimonyScreen({super.key});
 
   @override
-  State<NewScreen> createState() => _NewScreenState();
+  State<TestimonyScreen> createState() => _TestimonyScreenState();
 }
 
-class _NewScreenState extends State<NewScreen> {
+class _TestimonyScreenState extends State<TestimonyScreen> {
   //CollectionReference users = FirebaseFirestore.instance.collection("users");
 
   final nameController = TextEditingController();
-  final phoneController = TextEditingController();
-  final dobController = TextEditingController();
-  final stateController = TextEditingController();
-  final countryController = TextEditingController();
-  bool loading = false;
-  final fireStore = FirebaseFirestore.instance.collection("users");
+  final testimonyController = TextEditingController();
+  final fireStore = FirebaseFirestore.instance.collection("testimony");
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("New Here"),
+        title: const Text("Your Testimony"),
         backgroundColor: const Color.fromARGB(255, 54, 1, 63),
         centerTitle: true,
       ),
@@ -38,10 +35,10 @@ class _NewScreenState extends State<NewScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              Lottie.asset("animations/new.json", height: 100),
+              // Lottie.asset("animations/new.json", height: 100),
               Padding(
                 padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
+                    left: 28.0, right: 28, top: 35, bottom: 5),
                 child: TextField(
                   controller: nameController,
                   decoration:
@@ -51,59 +48,28 @@ class _NewScreenState extends State<NewScreen> {
               Padding(
                 padding: const EdgeInsets.only(
                     left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: phoneController,
+                child: TextFormField(
+                  maxLines: 20,
+                  controller: testimonyController,
                   decoration: const InputDecoration(
-                      hintText: "Enter Your Phone Number"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: dobController,
-                  decoration: const InputDecoration(
-                      hintText: "Enter Your BirthDay & Month"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: stateController,
-                  decoration:
-                      const InputDecoration(hintText: "Enter Your State"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: countryController,
-                  decoration:
-                      const InputDecoration(hintText: "Enter Your Country"),
+                    hintText: "Your Testimony",
+                    border: OutlineInputBorder(),
+                  ),
                 ),
               ),
               Padding(
                 padding: const EdgeInsets.only(top: 42.0, left: 26, right: 26),
                 child: InkWell(
                   onTap: () {
-                    setState(() {
-                      loading = true;
-                    });
-
                     fireStore.doc(nameController.text).set({
                       'name': nameController.text.toString(),
-                      'mobile': phoneController.text.toString(),
-                      'dob': dobController.text.toString(),
-                      'state': stateController.text.toString(),
-                      'country': countryController.text.toString(),
+                      'Testimony': testimonyController.text.toString(),
                     });
                     Navigator.push(
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const SuccessScreen();
+                          return const TestimonyReceivedScreen();
                         },
                       ),
                     );

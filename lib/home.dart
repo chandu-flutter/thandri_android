@@ -4,8 +4,9 @@ import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
 
 import 'package:thandri_sannidhi/downloaad.dart';
 import 'package:thandri_sannidhi/new.dart';
-import 'package:thandri_sannidhi/notification_page.dart';
+
 import 'package:thandri_sannidhi/songbook.dart';
+import 'package:thandri_sannidhi/testimony.dart';
 import 'package:thandri_sannidhi/updates.dart';
 import 'package:thandri_sannidhi/website.dart';
 
@@ -35,6 +36,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   Future<void> getImageUrl() async {
     final ref = storage.ref().child('promise.jpg');
+
     final url = await ref.getDownloadURL();
     setState(() {
       imageUrl = url;
@@ -175,7 +177,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const Updates();
+                          return const TestimonyScreen();
                         },
                       ),
                     );
@@ -188,14 +190,14 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
                 InkWell(
                   onTap: () {
-                    // Navigator.push(
-                    //   context,
-                    //   MaterialPageRoute(
-                    //     builder: (context) {
-                    //       return YoutubeLive();
-                    //     },
-                    //   ),
-                    // );
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return YoutubeLive();
+                        },
+                      ),
+                    );
                   },
                   child: Linked(
                     icon: Icons.live_tv,

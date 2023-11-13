@@ -31,7 +31,7 @@ class _UpdatesState extends State<Updates> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 128, 0, 128),
+        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
         title: const Text('Notifications'),
         centerTitle: true,
       ),
@@ -39,28 +39,32 @@ class _UpdatesState extends State<Updates> {
         child: Column(
           children: [
             Center(
-              child: Card(
-                elevation: 14,
-                child: Image(
-                  image: NetworkImage(imageUrl, scale: 1.0),
-                  fit: BoxFit.cover,
-                  frameBuilder:
-                      (context, child, frame, wasSynchronouslyLoaded) {
-                    return child;
-                  },
-                  loadingBuilder: (context, child, loadingProgress) {
-                    if (loadingProgress == null) {
+              child: Container(
+                width: 500,
+                height: 950,
+                child: Card(
+                  elevation: 14,
+                  child: Image(
+                    image: NetworkImage(imageUrl, scale: 1.0),
+                    fit: BoxFit.cover,
+                    frameBuilder:
+                        (context, child, frame, wasSynchronouslyLoaded) {
                       return child;
-                    } else {
-                      return Center(
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation(
-                            Color.fromARGB(255, 54, 1, 63),
+                    },
+                    loadingBuilder: (context, child, loadingProgress) {
+                      if (loadingProgress == null) {
+                        return child;
+                      } else {
+                        return Center(
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation(
+                              Color.fromARGB(255, 54, 1, 63),
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                  },
+                        );
+                      }
+                    },
+                  ),
                 ),
               ),
             ),

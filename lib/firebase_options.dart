@@ -44,38 +44,37 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCFqp4mt9i3XNfKSTiCmgunnTW1rMAJyf8',
-    appId: '1:534725597570:web:7fff7b635f8395857cd79b',
-    messagingSenderId: '534725597570',
-    projectId: 'thandridb',
-    authDomain: 'thandridb.firebaseapp.com',
-    storageBucket: 'thandridb.appspot.com',
-    measurementId: 'G-7CQJQE7CK7',
+    apiKey: 'AIzaSyBQCkCvGtvNbopA-eYlVsZQlT_ILxvTsI8',
+    appId: '1:799628710184:web:ad4960a76af216e1c1801d',
+    messagingSenderId: '799628710184',
+    projectId: 'thandriusers',
+    authDomain: 'thandriusers.firebaseapp.com',
+    storageBucket: 'thandriusers.appspot.com',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyA7VuF-J4EMRFjTWml8AcoeTLZCZYy01Yk',
-    appId: '1:534725597570:android:e6a30df2ef317fde7cd79b',
-    messagingSenderId: '534725597570',
-    projectId: 'thandridb',
-    storageBucket: 'thandridb.appspot.com',
+    apiKey: 'AIzaSyD-ya96B9F0o_6b6FFWE9IHlbgzg4yLako',
+    appId: '1:799628710184:android:d0186b692879f71dc1801d',
+    messagingSenderId: '799628710184',
+    projectId: 'thandriusers',
+    storageBucket: 'thandriusers.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBdoB1265jiHkivdA83aCe-nCAubFTnJX4',
-    appId: '1:534725597570:ios:713c6691c3ff3db47cd79b',
-    messagingSenderId: '534725597570',
-    projectId: 'thandridb',
-    storageBucket: 'thandridb.appspot.com',
+    apiKey: 'AIzaSyCFcIEBijQhsnG_eIRo5BxmWBsoQAGXJeg',
+    appId: '1:799628710184:ios:110eb2e443373804c1801d',
+    messagingSenderId: '799628710184',
+    projectId: 'thandriusers',
+    storageBucket: 'thandriusers.appspot.com',
     iosBundleId: 'com.example.thandriSannidhi',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBdoB1265jiHkivdA83aCe-nCAubFTnJX4',
-    appId: '1:534725597570:ios:888ff328089b45697cd79b',
-    messagingSenderId: '534725597570',
-    projectId: 'thandridb',
-    storageBucket: 'thandridb.appspot.com',
+    apiKey: 'AIzaSyCFcIEBijQhsnG_eIRo5BxmWBsoQAGXJeg',
+    appId: '1:799628710184:ios:83ce7eb9f59bc4e9c1801d',
+    messagingSenderId: '799628710184',
+    projectId: 'thandriusers',
+    storageBucket: 'thandriusers.appspot.com',
     iosBundleId: 'com.example.thandriSannidhi.RunnerTests',
   );
 }
