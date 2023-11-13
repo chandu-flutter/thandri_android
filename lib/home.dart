@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
           icon: const Icon(Icons.menu),
         ),
         backgroundColor: const Color.fromARGB(255, 54, 1, 63),
-        title: const Text('Thandri Sannidhi'),
+        title: const Text('Thandri Sannidhi Ministries'),
         centerTitle: true,
         actions: [
           InkWell(
@@ -118,6 +118,23 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
+                          return const SongBookScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Linked(
+                    icon: Icons.auto_stories,
+                    label1: "Song",
+                    label2: "Book",
+                  ),
+                ),
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
                           return const DownloadScreen();
                         },
                       ),
@@ -127,23 +144,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     icon: Icons.description,
                     label1: "Satya",
                     label2: "Darsanam",
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const NewScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Linked(
-                    icon: Icons.person,
-                    label1: "New",
-                    label2: "Here",
                   ),
                 ),
                 InkWell(
@@ -253,15 +253,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const SongBookScreen();
+                          return const NewScreen();
                         },
                       ),
                     );
                   },
                   child: Linked(
-                    icon: Icons.auto_stories,
-                    label1: "Song",
-                    label2: "Book",
+                    icon: Icons.person,
+                    label1: "New",
+                    label2: "Here",
                   ),
                 ),
                 Linked(
