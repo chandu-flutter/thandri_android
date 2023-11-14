@@ -1,6 +1,7 @@
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zoom_drawer/flutter_zoom_drawer.dart';
+import 'package:thandri_sannidhi/contact.dart';
 
 import 'package:thandri_sannidhi/downloaad.dart';
 import 'package:thandri_sannidhi/new.dart';
@@ -264,10 +265,22 @@ class _HomeScreenState extends State<HomeScreen> {
                     label2: "Here",
                   ),
                 ),
-                Linked(
-                  icon: Icons.monetization_on,
-                  label1: "",
-                  label2: "Tithe",
+                InkWell(
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) {
+                          return const ContactScreen();
+                        },
+                      ),
+                    );
+                  },
+                  child: Linked(
+                    icon: Icons.email,
+                    label1: "",
+                    label2: "Contact",
+                  ),
                 ),
               ],
             ),

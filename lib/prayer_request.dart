@@ -2,39 +2,63 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:thandri_sannidhi/prayer_received.dart';
 
 import 'package:thandri_sannidhi/new_user_success.dart';
 import 'package:thandri_sannidhi/testimonyReceived.dart';
 
-class TestimonyScreen extends StatefulWidget {
-  const TestimonyScreen({super.key});
+class PrayerRequestScreen extends StatefulWidget {
+  const PrayerRequestScreen({super.key});
 
   @override
-  State<TestimonyScreen> createState() => _TestimonyScreenState();
+  State<PrayerRequestScreen> createState() => _PrayerRequestScreenState();
 }
 
-class _TestimonyScreenState extends State<TestimonyScreen> {
+class _PrayerRequestScreenState extends State<PrayerRequestScreen> {
   //CollectionReference users = FirebaseFirestore.instance.collection("users");
   final _formKey = GlobalKey<FormState>();
   final nameController = TextEditingController();
-  final testimonyController = TextEditingController();
-  final fireStore = FirebaseFirestore.instance.collection("testimony");
+  final phoneController = TextEditingController();
+  final prayerController = TextEditingController();
+  final fireStore = FirebaseFirestore.instance.collection("prayer");
+
+  String? validateName(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your Name";
+    }
+    return null;
+  }
+
+  String? validatePhone(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your Mobile Number";
+    }
+    return null;
+  }
+
+  String? validateRequest(String? value) {
+    if (value == null || value.isEmpty) {
+      return "Enter your Prayer Request";
+    }
+    return null;
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text("Your Testimony"),
-        backgroundColor: const Color.fromARGB(255, 54, 1, 63),
-        centerTitle: true,
-      ),
-      body: Container(
-        height: double.infinity,
-        decoration: const BoxDecoration(
-          color: Colors.white,
+    return Form(
+      key: _formKey,
+      child: Scaffold(
+        appBar: AppBar(
+          title: const Text("Prayer Request"),
+          backgroundColor: const Color.fromARGB(255, 54, 1, 63),
+          centerTitle: true,
         ),
-        child: SingleChildScrollView(
-          child: Form(
-            key: _formKey,
+        body: Container(
+          height: double.infinity,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+          ),
+          child: SingleChildScrollView(
             child: Column(
               children: <Widget>[
                 // Lottie.asset("animations/new.json", height: 100),
@@ -48,30 +72,33 @@ class _TestimonyScreenState extends State<TestimonyScreen> {
                       prefixIcon: Icon(Icons.person),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Enter Your Name";
-                      }
-                      return null;
-                    },
+                    validator: validateName,
                   ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 28.0, right: 28, top: 5, bottom: 5),
                   child: TextFormField(
-                    maxLines: 20,
-                    controller: testimonyController,
+                    controller: phoneController,
                     decoration: const InputDecoration(
-                      hintText: "Your Testimony",
+                      hintText: "Enter Your Phone Number",
+                      prefixIcon: Icon(Icons.phone_android),
+                      prefixIconColor: Color.fromARGB(255, 54, 1, 63),
+                    ),
+                    validator: validatePhone,
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 28.0, right: 28, top: 15, bottom: 5),
+                  child: TextFormField(
+                    maxLines: 20,
+                    controller: prayerController,
+                    decoration: const InputDecoration(
+                      hintText: "Prayer Request",
                       border: OutlineInputBorder(),
                     ),
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return "Enter Your Testimony";
-                      }
-                      return null;
-                    },
+                    validator: validateRequest,
                   ),
                 ),
                 Padding(
@@ -82,19 +109,17 @@ class _TestimonyScreenState extends State<TestimonyScreen> {
                       if (_formKey.currentState?.validate() == true) {
                         fireStore.doc(nameController.text).set({
                           'name': nameController.text.toString(),
-                          'Testimony': testimonyController.text.toString(),
+                          'mobile': phoneController.text.toString(),
+                          'prayer': prayerController.text.toString(),
                         });
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) {
-                              return const TestimonyReceivedScreen();
+                              return const PrayerReceivedScreen();
                             },
                           ),
                         );
-
-                        nameController.clear();
-                        testimonyController.clear();
                       }
                     },
                     child: Container(

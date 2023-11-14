@@ -3,7 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
-import 'package:thandri_sannidhi/success.dart';
+import 'package:thandri_sannidhi/new_user_success.dart';
 
 class NewScreen extends StatefulWidget {
   const NewScreen({super.key});
@@ -14,7 +14,7 @@ class NewScreen extends StatefulWidget {
 
 class _NewScreenState extends State<NewScreen> {
   //CollectionReference users = FirebaseFirestore.instance.collection("users");
-
+  final _formfield = GlobalKey<FormState>();
   final nameController = TextEditingController();
   final phoneController = TextEditingController();
   final dobController = TextEditingController();
@@ -36,94 +36,139 @@ class _NewScreenState extends State<NewScreen> {
           color: Colors.white,
         ),
         child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Lottie.asset("animations/new.json", height: 100),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: nameController,
-                  decoration:
-                      const InputDecoration(hintText: "Enter Your Name"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: phoneController,
-                  decoration: const InputDecoration(
-                      hintText: "Enter Your Phone Number"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: dobController,
-                  decoration: const InputDecoration(
-                      hintText: "Enter Your BirthDay & Month"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: stateController,
-                  decoration:
-                      const InputDecoration(hintText: "Enter Your State"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                    left: 28.0, right: 28, top: 5, bottom: 5),
-                child: TextField(
-                  controller: countryController,
-                  decoration:
-                      const InputDecoration(hintText: "Enter Your Country"),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 42.0, left: 26, right: 26),
-                child: InkWell(
-                  onTap: () {
-                    setState(() {
-                      loading = true;
-                    });
-
-                    fireStore.doc(nameController.text).set({
-                      'name': nameController.text.toString(),
-                      'mobile': phoneController.text.toString(),
-                      'dob': dobController.text.toString(),
-                      'state': stateController.text.toString(),
-                      'country': countryController.text.toString(),
-                    });
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) {
-                          return const SuccessScreen();
-                        },
-                      ),
-                    );
-                  },
-                  child: Container(
-                    width: double.infinity,
-                    height: 50,
-                    child: Center(
-                      child: Text(
-                        "Submit",
-                        style: TextStyle(fontSize: 18, color: Colors.white),
-                      ),
+          child: Form(
+            key: _formfield,
+            child: Column(
+              children: <Widget>[
+                Lottie.asset("animations/new.json", height: 100),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 28.0, right: 28, top: 5, bottom: 5),
+                  child: TextFormField(
+                    controller: nameController,
+                    decoration: const InputDecoration(
+                      hintText: "Enter Your Name",
+                      prefixIcon: Icon(Icons.person),
+                      prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),
-                    decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 54, 1, 63),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter Your Name";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 28.0, right: 28, top: 5, bottom: 5),
+                  child: TextFormField(
+                    controller: phoneController,
+                    decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.phone_android),
+                        prefixIconColor: Color.fromARGB(255, 54, 1, 63),
+                        hintText: "Enter Your Phone Number"),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter Your Phone Number";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 28.0, right: 28, top: 5, bottom: 5),
+                  child: TextFormField(
+                    controller: dobController,
+                    decoration: const InputDecoration(
+                        prefixIcon: Icon(Icons.cake),
+                        prefixIconColor: Color.fromARGB(255, 54, 1, 63),
+                        hintText: "Your BirthDay & Month(eg: 27 May)"),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter Your BirthDay and Month";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 28.0, right: 28, top: 5, bottom: 5),
+                  child: TextFormField(
+                    controller: stateController,
+                    decoration: const InputDecoration(
+                      hintText: "Enter Your State",
+                      prefixIcon: Icon(Icons.location_on),
+                      prefixIconColor: Color.fromARGB(255, 54, 1, 63),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter Your State";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                      left: 28.0, right: 28, top: 5, bottom: 5),
+                  child: TextFormField(
+                    controller: countryController,
+                    decoration: const InputDecoration(
+                      hintText: "Enter Your Country",
+                      prefixIcon: Icon(Icons.language),
+                      prefixIconColor: Color.fromARGB(255, 54, 1, 63),
+                    ),
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return "Enter Your Country";
+                      }
+                      return null;
+                    },
+                  ),
+                ),
+                Padding(
+                  padding:
+                      const EdgeInsets.only(top: 42.0, left: 26, right: 26),
+                  child: InkWell(
+                    onTap: () {
+                      if (_formfield.currentState?.validate() == true) {
+                        fireStore.doc(nameController.text).set({
+                          'name': nameController.text.toString(),
+                          'mobile': phoneController.text.toString(),
+                          'dob': dobController.text.toString(),
+                          'state': stateController.text.toString(),
+                          'country': countryController.text.toString(),
+                        });
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return const SuccessScreen();
+                            },
+                          ),
+                        );
+                      }
+                    },
+                    child: Container(
+                      width: double.infinity,
+                      height: 50,
+                      child: Center(
+                        child: Text(
+                          "Submit",
+                          style: TextStyle(fontSize: 18, color: Colors.white),
+                        ),
+                      ),
+                      decoration: BoxDecoration(
+                        color: Color.fromARGB(255, 54, 1, 63),
+                      ),
                     ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
-class TestimonyReceivedScreen extends StatelessWidget {
-  const TestimonyReceivedScreen({super.key});
+class PrayerReceivedScreen extends StatelessWidget {
+  const PrayerReceivedScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Thank you"),
+        title: Text("Thank you for Sharing"),
         backgroundColor: const Color.fromARGB(255, 54, 1, 63),
+        centerTitle: true,
       ),
       body: SafeArea(
           child: Container(
@@ -23,24 +24,24 @@ class TestimonyReceivedScreen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'To God be the Glory',
+                'Your sorrow shall be turned into Joy',
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 20,
                   color: Colors.white,
                 ),
               ),
               SizedBox(
-                height: 30,
+                height: 10,
               ),
               Text(
-                'Thank you for sharing',
+                'John 16:20',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
               SizedBox(
                 height: 30,
               ),
               Text(
-                'Continue your walk with Jesus',
+                'We will keep praying for you',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
             ],

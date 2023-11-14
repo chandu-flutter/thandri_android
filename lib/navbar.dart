@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:thandri_sannidhi/contact.dart';
 import 'package:thandri_sannidhi/events.dart';
+import 'package:thandri_sannidhi/prayer_request.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:lottie/lottie.dart';
 
@@ -34,12 +35,12 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.event,
+              Icons.engineering,
               size: 20,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             title: const Text(
-              "Events",
+              "Prayer Request",
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             onTap: () {
@@ -47,7 +48,7 @@ class NavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const EventCalendar();
+                    return const PrayerRequestScreen();
                   },
                 ),
               );
@@ -55,23 +56,23 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.phone,
+              Icons.money,
               size: 20,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             title: const Text(
-              "Contact",
+              "Offering",
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             onTap: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) {
-                    return const ContactScreen();
-                  },
-                ),
-              );
+              // Navigator.push(
+              //   context,
+              //   MaterialPageRoute(
+              //     builder: (context) {
+              //       return const ContactScreen();
+              //     },
+              //   ),
+              // );
             },
           ),
           ListTile(

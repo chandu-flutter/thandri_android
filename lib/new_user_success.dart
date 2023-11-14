@@ -33,7 +33,7 @@ class SuccessScreen extends StatelessWidget {
                 height: 30,
               ),
               Text(
-                'We have your detals',
+                'We have your details',
                 style: TextStyle(fontSize: 18, color: Colors.grey),
               ),
               SizedBox(
