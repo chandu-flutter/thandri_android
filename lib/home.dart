@@ -5,6 +5,7 @@ import 'package:thandri_sannidhi/contact.dart';
 
 import 'package:thandri_sannidhi/downloaad.dart';
 import 'package:thandri_sannidhi/new.dart';
+import 'package:thandri_sannidhi/prayer_request.dart';
 
 import 'package:thandri_sannidhi/songbook.dart';
 import 'package:thandri_sannidhi/testimony.dart';
@@ -178,15 +179,15 @@ class _HomeScreenState extends State<HomeScreen> {
                       context,
                       MaterialPageRoute(
                         builder: (context) {
-                          return const TestimonyScreen();
+                          return const PrayerRequestScreen();
                         },
                       ),
                     );
                   },
                   child: Linked(
-                    icon: Icons.accessibility_new,
-                    label1: "Submit",
-                    label2: "Testimony",
+                    icon: Icons.touch_app,
+                    label1: "Prayer",
+                    label2: "Request",
                   ),
                 ),
                 InkWell(

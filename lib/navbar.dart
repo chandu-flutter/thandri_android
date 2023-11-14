@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:thandri_sannidhi/contact.dart';
 import 'package:thandri_sannidhi/events.dart';
 import 'package:thandri_sannidhi/prayer_request.dart';
+import 'package:thandri_sannidhi/testimony.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:lottie/lottie.dart';
 
@@ -35,12 +36,12 @@ class NavBar extends StatelessWidget {
           ),
           ListTile(
             leading: const Icon(
-              Icons.engineering,
+              Icons.accessibility_new,
               size: 20,
               color: Color.fromARGB(255, 255, 255, 255),
             ),
             title: const Text(
-              "Prayer Request",
+              "Your Testimony",
               style: TextStyle(color: Colors.white, fontSize: 16),
             ),
             onTap: () {
@@ -48,7 +49,7 @@ class NavBar extends StatelessWidget {
                 context,
                 MaterialPageRoute(
                   builder: (context) {
-                    return const PrayerRequestScreen();
+                    return const TestimonyScreen();
                   },
                 ),
               );
