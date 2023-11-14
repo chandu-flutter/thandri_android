@@ -40,7 +40,7 @@ class _NewScreenState extends State<NewScreen> {
             key: _formfield,
             child: Column(
               children: <Widget>[
-                Lottie.asset("animations/new.json", height: 100),
+                Lottie.asset("animations/new.json", height: 200),
                 Padding(
                   padding: const EdgeInsets.only(
                       left: 28.0, right: 28, top: 5, bottom: 5),
