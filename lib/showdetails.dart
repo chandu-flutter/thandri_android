@@ -11,8 +11,8 @@ class ShowDetails extends StatefulWidget {
 }
 
 class _ShowDetailsState extends State<ShowDetails> {
-  double _scale = 1.0;
-  double _previousScale = 1.0;
+  double _initialScale = 1.0;
+  double _scaleFactor = 1.0;
 
   @override
   Widget build(BuildContext context) {
@@ -22,16 +22,28 @@ class _ShowDetailsState extends State<ShowDetails> {
         title: Text(songs[widget.index].name),
         centerTitle: true,
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: SingleChildScrollView(
-          child: Column(
-            children: <Widget>[
-              Text(
-                songs[widget.index].details,
-                style: const TextStyle(fontSize: 18),
-              ),
-            ],
+      body: GestureDetector(
+        onScaleStart: (details) {
+          _initialScale = _scaleFactor;
+        },
+        onScaleUpdate: (details) {
+          setState(() {
+            _scaleFactor = _initialScale * details.scale;
+            print(_scaleFactor);
+          });
+        },
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                Text(
+                  songs[widget.index].details,
+                  style: const TextStyle(fontSize: 18),
+                  textScaleFactor: _scaleFactor,
+                ),
+              ],
+            ),
           ),
         ),
       ),
