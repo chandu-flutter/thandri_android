@@ -47,7 +47,7 @@ class _NewScreenState extends State<NewScreen> {
                   child: TextFormField(
                     controller: nameController,
                     decoration: const InputDecoration(
-                      hintText: "Enter Your Name",
+                      hintText: "Your Name",
                       prefixIcon: Icon(Icons.person),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),
@@ -67,7 +67,7 @@ class _NewScreenState extends State<NewScreen> {
                     decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.phone_android),
                         prefixIconColor: Color.fromARGB(255, 54, 1, 63),
-                        hintText: "Enter Your Phone Number"),
+                        hintText: "Your Phone Number"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter Your Phone Number";
@@ -84,7 +84,7 @@ class _NewScreenState extends State<NewScreen> {
                     decoration: const InputDecoration(
                         prefixIcon: Icon(Icons.cake),
                         prefixIconColor: Color.fromARGB(255, 54, 1, 63),
-                        hintText: "Your BirthDay & Month(eg: 27 May)"),
+                        hintText: "BirthDay & Month (eg: 27 May)"),
                     validator: (value) {
                       if (value == null || value.isEmpty) {
                         return "Enter Your BirthDay and Month";
@@ -99,7 +99,7 @@ class _NewScreenState extends State<NewScreen> {
                   child: TextFormField(
                     controller: stateController,
                     decoration: const InputDecoration(
-                      hintText: "Enter Your State",
+                      hintText: "State Living",
                       prefixIcon: Icon(Icons.location_on),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),
@@ -117,7 +117,7 @@ class _NewScreenState extends State<NewScreen> {
                   child: TextFormField(
                     controller: countryController,
                     decoration: const InputDecoration(
-                      hintText: "Enter Your Country",
+                      hintText: "Country Of Residence",
                       prefixIcon: Icon(Icons.language),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),

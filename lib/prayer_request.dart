@@ -24,21 +24,21 @@ class _PrayerRequestScreenState extends State<PrayerRequestScreen> {
 
   String? validateName(String? value) {
     if (value == null || value.isEmpty) {
-      return "Enter your Name";
+      return "Enter Your Name";
     }
     return null;
   }
 
   String? validatePhone(String? value) {
     if (value == null || value.isEmpty) {
-      return "Enter your Mobile Number";
+      return "Enter Your Mobile Number";
     }
     return null;
   }
 
   String? validateRequest(String? value) {
     if (value == null || value.isEmpty) {
-      return "Enter your Prayer Request";
+      return "Enter Your Prayer Request";
     }
     return null;
   }
@@ -68,7 +68,7 @@ class _PrayerRequestScreenState extends State<PrayerRequestScreen> {
                   child: TextFormField(
                     controller: nameController,
                     decoration: const InputDecoration(
-                      hintText: "Enter Your Name",
+                      hintText: "Your Name",
                       prefixIcon: Icon(Icons.person),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),
@@ -81,7 +81,7 @@ class _PrayerRequestScreenState extends State<PrayerRequestScreen> {
                   child: TextFormField(
                     controller: phoneController,
                     decoration: const InputDecoration(
-                      hintText: "Enter Your Phone Number",
+                      hintText: "Your Phone Number",
                       prefixIcon: Icon(Icons.phone_android),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),

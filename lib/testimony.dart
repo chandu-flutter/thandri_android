@@ -44,7 +44,7 @@ class _TestimonyScreenState extends State<TestimonyScreen> {
                   child: TextFormField(
                     controller: nameController,
                     decoration: const InputDecoration(
-                      hintText: "Enter Your Name",
+                      hintText: "Your Name",
                       prefixIcon: Icon(Icons.person),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),
