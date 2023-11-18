@@ -99,7 +99,7 @@ class _NewScreenState extends State<NewScreen> {
                   child: TextFormField(
                     controller: stateController,
                     decoration: const InputDecoration(
-                      hintText: "State Living",
+                      hintText: "Your State ",
                       prefixIcon: Icon(Icons.location_on),
                       prefixIconColor: Color.fromARGB(255, 54, 1, 63),
                     ),

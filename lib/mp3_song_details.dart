@@ -68,28 +68,33 @@ class _Mo3SongShowDetailsState extends State<Mo3SongShowDetails> {
                 ),
               ),
               SizedBox(
-                height: 20,
+                height: 30,
               ),
               Text(
                 mp3songs[widget.index].name,
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 22,
                   fontWeight: FontWeight.bold,
+                  color: Color.fromARGB(255, 54, 1, 63),
                 ),
-              ),
-              SizedBox(
-                height: 4,
               ),
               Text(
                 mp3songs[widget.index].album,
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 18,
                   fontWeight: FontWeight.normal,
                   color: Colors.grey,
                 ),
               ),
+              SizedBox(
+                height: 30,
+              ),
               Slider(
+                  divisions: 10,
                   value: position.inSeconds.toDouble(),
+                  activeColor: Color.fromARGB(255, 54, 1, 63),
+                  inactiveColor: Colors.grey,
+                  thumbColor: Color.fromARGB(255, 54, 1, 63),
                   min: 0,
                   max: duration.inSeconds.toDouble(),
                   onChanged: (value) async {
@@ -100,21 +105,30 @@ class _Mo3SongShowDetailsState extends State<Mo3SongShowDetails> {
 
                     await audioPlayer.resume();
                   }),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16),
-                // child: Row(
-                //     mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //     children: [
-                //       Text(
-                //         formatTime(position),
-                //       ),
-                //       Text(
-                //         formatTime(duration - position),
-                //       ),
-                //     ]),
+              SizedBox(
+                height: 30,
               ),
-              CircleAvatar(
-                radius: 35,
+              Container(
+                height: 100,
+                width: 100,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(20),
+                  color: Colors.white,
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade600,
+                      blurRadius: 10,
+                      spreadRadius: 1,
+                      offset: const Offset(4, 4),
+                    ),
+                    const BoxShadow(
+                      color: Colors.white,
+                      blurRadius: 10,
+                      spreadRadius: 1,
+                      offset: Offset(-4, -4),
+                    ),
+                  ],
+                ),
                 child: IconButton(
                   icon: Icon(isPlaying ? Icons.pause : Icons.play_arrow),
                   iconSize: 50,
