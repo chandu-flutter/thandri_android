@@ -90,7 +90,6 @@ class _Mo3SongShowDetailsState extends State<Mo3SongShowDetails> {
                 height: 30,
               ),
               Slider(
-                  divisions: 10,
                   value: position.inSeconds.toDouble(),
                   activeColor: Color.fromARGB(255, 54, 1, 63),
                   inactiveColor: Colors.grey,
